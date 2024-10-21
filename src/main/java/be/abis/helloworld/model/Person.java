@@ -3,9 +3,16 @@ package be.abis.helloworld.model;
 import java.util.Objects;
 
 public class Person {
+    public static final Person NULL=new Person() {{
+        setId(0L);
+        setName("Nobody");
+        setAge(-1);
+        setIsActive(0);
+    }};
     Long id;
     String name;
     Integer age;
+    Integer isActive;
 
     public Person(){}
 
@@ -33,12 +40,20 @@ public class Person {
         this.age = age;
     }
 
+    public Integer getIsActive() {
+        return isActive;
+    }
+
+    public void setIsActive(Integer isActive) {
+        this.isActive = isActive;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Person person = (Person) o;
-        return Objects.equals(id, person.id) && Objects.equals(name, person.name) && Objects.equals(age, person.age);
+        return Objects.equals(id, person.id);
     }
 
     @Override
@@ -51,7 +66,8 @@ public class Person {
         return "Person{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
-                ", age=" + age +
+                ", age=" + age + '\'' +
+                ", isActive=" + isActive +
                 '}';
     }
 }
