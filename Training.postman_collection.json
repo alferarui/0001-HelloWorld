@@ -1,0 +1,149 @@
+{
+	"info": {
+		"_postman_id": "b76e3ebd-9e71-470c-9e54-983b0e8f68a0",
+		"name": "Training",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "0001-HelloWorld",
+			"item": [
+				{
+					"name": "persons",
+					"item": [
+						{
+							"name": "persons-by-id",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/api/persons/1",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"persons",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "persons-all",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/api/persons",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"persons"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "activate",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/api/persons/1/activate",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"persons",
+										"1",
+										"activate"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "deactivate",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/api/persons/1/deactivate",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"persons",
+										"1",
+										"deactivate"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "save",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"id\": 100,\n    \"name\": \"Betty\",\n    \"age\": 368,\n    \"isActive\":1\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/api/persons",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"api",
+										"persons"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "host",
+			"value": "http://localhost:8080"
+		}
+	]
+}
